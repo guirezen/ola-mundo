@@ -1,4 +1,4 @@
-import { Route, Routes, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import Posts from '../../assets/json/posts.json'
 import SobrePost from "../SobrePost";
 import fotoTitulo from '../../assets/posts/1/capa.png'
@@ -24,21 +24,19 @@ export default function Post() {
     }
 
     return (
-        <Routes>
-            <Route path="*" element={<PaginaPadrao />}>
-                <Route index element={
-                    <SobrePost
-                        titulo={post.titulo}
-                        fotoCapa={fotoTitulo}
-                    >
-                        <section className="post-markdown-container">
-                            <ReactMarkdown>
-                                {post.texto}
-                            </ReactMarkdown>
-                        </section>
-                    </SobrePost>
-                } />
-            </Route>
-        </Routes>
+        <PaginaPadrao>
+            <SobrePost
+                titulo={post.titulo}
+                fotoCapa={fotoTitulo}
+            >
+                <section className="post-markdown-container">
+                    <ReactMarkdown>
+                        {post.texto}
+                    </ReactMarkdown>
+                </section>
+
+            </SobrePost>
+        </PaginaPadrao>
+
     )
 }
