@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import Posts from '../../assets/json/posts.json'
 import SobrePost from "../SobrePost";
 import fotoTitulo from '../../assets/posts/1/capa.png'
@@ -10,6 +10,7 @@ import PostCard from "componentes/PostCard";
 
 export default function Post() {
     const parametro = useParams();
+    const navegar = useNavigate();
     // const postCard = Posts.filter(post => {
     //     if (post.id.toString() === parametro.id) {
     //         console.log(post)
@@ -39,7 +40,9 @@ export default function Post() {
                 </section>
                 <div>
                     <h1>Outros posts que você pode gostar:</h1>
-                    <div className='postConteiner'>
+                    <div 
+                        className='postConteiner'
+                    >
                         {posts4.map(post => (
                             <PostCard
                                 post={post}
