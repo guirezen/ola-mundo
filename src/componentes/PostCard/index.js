@@ -4,6 +4,7 @@ import minhaFoto from '../../assets/posts/1/capa.png'
 import Botao from 'componentes/Botao'
 
 export default function PostCard({ post }) {
+    console.log(post)
     return (
         <Link to={`posts/${post.id}`}>
             <li className={style.post} key={post.id}>

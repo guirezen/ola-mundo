@@ -53,6 +53,14 @@
     overflow-x: auto;
 }
 
+.postConteiner {
+    padding: 0 6vw 3.625rem;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
 @media (max-width: 1100px) {
     .post-markdown-container p {
         margin-bottom: 2rem;
